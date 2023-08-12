@@ -26,9 +26,13 @@ export default function handler(
         break;
         case 'DELETE':
           delete currentUsers[index];
-          res.status(200).json(currentUsers.filter(n => n));
         break;
     }
-    res.status(200).json(currentUsers[index]);
+  
+    if (req.method === 'DELETE') {
+      res.status(200).json(currentUsers.filter(n => n));
+    } else {
+      res.status(200).json(currentUsers[index]);
+    }
   }
 

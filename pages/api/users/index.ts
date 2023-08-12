@@ -23,5 +23,5 @@ export default function handler(
         currentUsers.push(newUser);
       break;
   }  
-  res.status(200).json(currentUsers);
+  res.status(200).json(currentUsers.filter(n => n));
 }
